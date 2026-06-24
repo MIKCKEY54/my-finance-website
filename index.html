@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastTrack Finance | Top 10 Verified Unsecured Loans</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+        :root {
+            --bg-main: #090d16;
+            --bg-surface: #131926;
+            --bg-surface-hover: #1c2538;
+            --brand-primary: #10b981;
+            --brand-secondary: #6366f1;
+            --brand-glow: rgba(16, 185, 129, 0.15);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-color: #222f47;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* Utility Helper Classes to Satisfy IDE Code Injectors */
+        .text-brand-primary { color: var(--brand-primary); }
+        .text-brand-secondary { color: var(--brand-secondary); }
+        .text-accent-blue { color: #38bdf8; }
+        .text-star { color: #eab308; }
+
+        /* Screen Reader Label Alignment */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        /* Top Bar & Trust Signals */
+        .trust-ticker {
+            background: linear-gradient(90deg, #06b6d4, var(--brand-secondary));
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            padding: 8px 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 6%;
+            background: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(16px);
+            position: sticky;
+            top: 0;
+            z-index: 900;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo i {
+            color: var(--brand-primary);
+            filter: drop-shadow(0 0 8px var(--brand-primary));
+        }
+
+        .disclosure-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .disclosure-btn:hover {
+            color: var(--text-primary);
+            border-color: var(--text-secondary);
+        }
+
+        /* Hero Layout */
+        .hero {
+            text-align: center;
+            padding: 50px 20px 30px;
+            background: radial-gradient(circle at top, rgba(99, 102, 241, 0.12) 0%, rgba(9, 13, 22, 0) 60%);
+        }
+
+        .verification-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--brand-primary);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            font-weight: 800;
+            line-height: 120%;
+            letter-spacing: -1.5px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(120deg, var(--brand-primary), #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 17px;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Core Application Dashboard Matrix */
+        .main-matrix {
+            display: grid;
+            grid-template-columns: 2.2fr 1fr;
+            gap: 35px;
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 20px 5% 40px;
+        }
+
+        /* Interactive Filter Dynamic Bar */
+        .filter-wrapper {
+            background: var(--bg-surface);
+            padding: 8px;
+            border-radius: 40px;
+            display: inline-flex;
+            gap: 6px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .filter-wrapper::-webkit-scrollbar {
+            display: none; /* Keep cleaner layout on mobile touch screens */
+        }
+
+        .filter-chip {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: var(--transition-smooth);
+        }
+
+        .filter-chip.active, .filter-chip:hover {
+            background: var(--bg-surface-hover);
+            color: var(--text-primary);
+        }
+        .filter-chip.active {
+            background: var(--brand-secondary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Premium Dynamic Loan Cards */
+        .loan-stream {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .loan-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .loan-card:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .top-banner {
+            position: absolute;
+            top: 0;
+            left: 30px;
+            background: var(--brand-secondary);
+            color: #fff;
+            padding: 4px 14px;
+            font-size: 11px;
+            font-weight: 800;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            text-transform: uppercase;
+        }
+
+        .speed-badge {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--brand-primary);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .card-meta {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+
+        .meta-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #38bdf8;
+            flex-shrink: 0;
+        }
+
+        .meta-title h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .trust-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* Metric Analytics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            background: rgba(9, 13, 22, 0.4);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            margin-bottom: 25px;
+        }
+
+        .metric-cell span {
+            display: block;
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .metric-cell strong {
+            display: block;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .bullet-perks {
+            margin-bottom: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .bullet-perks li {
+            list-style: none;
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            line-height: 1.4;
+        }
+
+        /* Actions Architecture */
+        .action-block {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-cta {
+            padding: 14px 28px;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: var(--transition-smooth);
+            border: none;
+        }
+
+        .btn-go {
+            background: var(--brand-primary);
+            color: #042f1a;
+            flex: 2;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .btn-go:hover {
+            background: #14f1a9;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-info {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            flex: 1;
+        }
+        .btn-info:hover {
+            background: var(--bg-surface-hover);
+            border-color: var(--text-secondary);
+        }
+
+        /* Sidebar Containers */
+        .sidebar-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .widget-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 25px;
+        }
+
+        .widget-box h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        /* Interactive Sidebar Loan Engine */
+        .slider-group {
+            margin-bottom: 20px;
+        }
+        .slider-flex {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        .slider-flex label {
+            color: var(--text-secondary);
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .slider-flex span:last-child {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+        .native-range {
+            width: 100%;
+            height: 6px;
+            background: var(--bg-main);
+            border-radius: 10px;
+            outline: none;
+            accent-color: var(--brand-secondary);
+        }
+
+        .calc-output-card {
+            background: rgba(9, 13, 22, 0.6);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px dashed var(--border-color);
+            margin-bottom: 15px;
+        }
+        .calc-output-card p {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .calc-output-card h2 {
+            font-size: 32px;
+            color: var(--brand-secondary);
+            font-weight: 800;
+            margin-top: 5px;
+        }
+
+        .btn-match {
+            background: linear-gradient(135deg, var(--brand-secondary), #4f46e5);
+            color: white;
+            width: 100%;
+            padding: 14px;
+            border-radius: var(--radius-md);
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        .btn-match:hover {
+            filter: brightness(1.1);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Trusted Newsletter Sign-up Component */
+        .secure-input-shell {
+            position: relative;
+            margin-bottom: 12px;
+        }
+        .secure-input-shell i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+        .secure-input-shell input {
+            width: 100%;
+            padding: 14px 14px 14px 42px;
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            color: white;
+            font-size: 14px;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+        .secure-input-shell input:focus {
+            border-color: var(--brand-secondary);
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.1);
+        }
+        .btn-subscribe {
+            width: 100%;
+            padding: 14px;
+            background: var(--text-primary);
+            color: var(--bg-main);
+            border-radius: var(--radius-md);
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+        .btn-subscribe:hover {
+            background: #e2e8f0;
+        }
+        .security-badge-row {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        /* Modal Deep-Dive Presentation Window */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(4, 7, 13, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-body {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            max-width: 600px;
+            width: 100%;
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.active .modal-body {
+            transform: scale(1);
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.05);
+            border: none;
+            color: var(--text-primary);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-close:hover { background: rgba(255,255,255,0.1); }
+
+        .modal-header-block {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .modal-data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+        .modal-data-table td {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+        }
+        .modal-data-table td:first-child { color: var(--text-secondary); font-weight: 500; }
+        .modal-data-table td:last-child { text-align: right; font-weight: 700; color: var(--text-primary); }
+
+        /* Utility System Message Popups */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: -400px;
+            background: var(--bg-surface);
+            border-left: 4px solid var(--brand-primary);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 18px 25px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 3000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .toast-notification.show { right: 30px; }
+
+        /* Explicit targets used by JS layout insertions to silence unused token inspections */
+        .loan-stream .loan-card,
+        .toast-notification.show {
+            opacity: 1;
+        }
+
+        /* --- RESPONSIVE ARCHITECTURE BREAKPOINTS --- */
+        @media (max-width: 992px) {
+            .main-matrix {
+                grid-template-columns: 1fr;
+                padding: 20px 4%;
+            }
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 4%;
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+            .hero {
+                padding: 40px 15px 20px;
+            }
+            .hero h1 {
+                font-size: 28px;
+                letter-spacing: -0.5px;
+            }
+            .hero p {
+                font-size: 14px;
+            }
+            .main-matrix {
+                padding: 10px 15px 30px;
+                gap: 25px;
+            }
+            .loan-card {
+                padding: 20px 15px;
+            }
+            .top-banner {
+                left: 15px;
+                font-size: 10px;
+            }
+            .speed-badge {
+                position: static;
+                display: inline-block;
+                margin-top: 15px;
+                margin-bottom: -5px;
+                font-size: 11px;
+                width: max-content;
+            }
+            .card-meta {
+                margin-bottom: 15px;
+                gap: 12px;
+            }
+            .meta-title h3 {
+                font-size: 19px;
+            }
+            .metrics-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 6px;
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+            .metric-cell span {
+                font-size: 9px;
+                letter-spacing: 0px;
+            }
+            .metric-cell strong {
+                font-size: 13px;
+            }
+            .bullet-perks {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                margin-bottom: 20px;
+            }
+            .bullet-perks li {
+                font-size: 13px;
+            }
+            .action-block {
+                flex-direction: column;
+                gap: 8px;
+            }
+            .btn-cta {
+                width: 100%;
+                padding: 12px;
+            }
+            .modal-body {
+                padding: 25px 15px;
+            }
+            .modal-header-block {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .modal-header-block .meta-icon {
+                margin: 0 auto;
+            }
+            .toast-notification {
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                padding: 12px 15px;
+            }
+            .toast-notification.show {
+                left: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="trust-ticker">
+        <i class="fa-solid fa-shield-halved"></i> Independent Review Portal: Rates updated as of June 2026. No hidden brokerage fees.
+    </div>
+
+    <header>
+        <a href="#" class="logo">
+            <i class="fa-solid fa-bolt"></i> FastTrack Finance
+        </a>
+        <button class="disclosure-btn" onclick="openDisclosureModal()">
+            <i class="fa-solid fa-circle-info"></i> Advertiser Disclosure
+        </button>
+    </header>
+
+    <section class="hero">
+        <div class="verification-badge">
+            <i class="fa-solid fa-square-check"></i> 100% SECURE &amp; COLLATERAL-FREE LOANS VERIFIED
+        </div>
+        <h1>Compare the Fastest <span>Unsecured Loans</span> of 2026</h1>
+        <p>Skip the banks. We analyze processing velocity, consumer protection policies, and underwriting criteria to index the market's top unsecured liquidity channels.</p>
+    </section>
+
+    <div class="main-matrix">
+
+        <main>
+            <div class="filter-wrapper">
+                <button class="filter-chip active" onclick="toggleCategory('all', this)">All Lenders</button>
+                <button class="filter-chip" onclick="toggleCategory('lightning', this)">Instant Payout (&lt; 24 hrs)</button>
+                <button class="filter-chip" onclick="toggleCategory('fair-credit', this)">Fair Credit Accepted</button>
+                <button class="filter-chip" onclick="toggleCategory('high-cap', this)">High Capital Limits</button>
+            </div>
+
+            <div class="loan-stream" id="lenderOutputTarget">
+                </div>
+        </main>
+
+        <aside class="sidebar-panel">
+
+            <div class="widget-box">
+                <h4><i class="fa-solid fa-sliders" class="text-brand-secondary"></i> Custom Loan Estimator</h4>
+
+                <div class="slider-group">
+                    <div class="slider-flex">
+                        <label for="rangeCapital">Capital Desired</label>
+                        <span id="sliderAmtValue">$10,000</span>
+                    </div>
+                    <input type="range" class="native-range" id="rangeCapital" min="1000" max="100000" step="1000" value="10000" oninput="runEngineMetrics()">
+                </div>
+
+                <div class="slider-group">
+                    <div class="slider-flex">
+                        <label for="rangeMonths">Target Duration</label>
+                        <span id="sliderTimeValue">36 Months</span>
+                    </div>
+                    <input type="range" class="native-range" id="rangeMonths" min="12" max="60" step="12" value="36" oninput="runEngineMetrics()">
+                </div>
+
+                <div class="calc-output-card">
+                    <p>Estimated Monthly Outlay</p>
+                    <h2 id="monthlyPaymentDisplay">$332</h2>
+                </div>
+
+                <button class="btn-match" onclick="executeSmartFilterMatch()">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Filter Matching Lenders
+                </button>
+            </div>
+
+            <div class="widget-box">
+                <h4><i class="fa-solid fa-gauge-high text-accent-blue"></i> Approval Odds Booster</h4>
+                <p style="color: var(--text-secondary); font-size: 13px; margin-bottom: 15px; line-height: 150%;">Check your financial readiness indicators to evaluate your real-time approval probabilities across our network.</p>
+
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+                    <label style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-secondary); cursor: pointer;">
+                        <input type="checkbox" class="odds-check" onchange="calculateOddsEngine()" style="accent-color: var(--brand-primary); width: 16px; height: 16px; cursor: pointer;"> Government ID Verified
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-secondary); cursor: pointer;">
+                        <input type="checkbox" class="odds-check" onchange="calculateOddsEngine()" style="accent-color: var(--brand-primary); width: 16px; height: 16px; cursor: pointer;"> Regular Income Flow (Paystubs Ready)
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-secondary); cursor: pointer;">
+                        <input type="checkbox" class="odds-check" onchange="calculateOddsEngine()" style="accent-color: var(--brand-primary); width: 16px; height: 16px; cursor: pointer;"> Credit Score over 600
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--text-secondary); cursor: pointer;">
+                        <input type="checkbox" class="odds-check" onchange="calculateOddsEngine()" style="accent-color: var(--brand-primary); width: 16px; height: 16px; cursor: pointer;"> Active Standing Bank Account
+                    </label>
+                </div>
+
+                <div style="background: rgba(9, 13, 22, 0.6); padding: 15px; border-radius: var(--radius-md); border: 1px dashed var(--border-color); display: flex; align-items: center; justify-content: space-between;">
+                    <span style="font-size: 12px; text-transform: uppercase; font-weight: 700; color: var(--text-secondary); letter-spacing: 0.5px;">Estimated Odds</span>
+                    <strong id="oddsPercentDisplay" style="font-size: 15px; color: #ef4444; text-transform: uppercase; font-weight: 800; letter-spacing: 0.5px; transition: var(--transition-smooth);">Poor (30%)</strong>
+                </div>
+            </div>
+
+            <div class="widget-box">
+                <h4><i class="fa-solid fa-bell text-star"></i> Rate Alert Intelligence</h4>
+                <p style="color: var(--text-secondary); font-size: 13px; margin-bottom: 15px; line-height: 150%;">Receive instant alerts when top-tier providers adjust their algorithmic interest rates downwards.</p>
+
+                <form id="subscriberFormShell" onsubmit="captureSubscriberData(event)">
+                    <div class="secure-input-shell">
+                        <i class="fa-solid fa-envelope"></i>
+                        <label for="subscriberEmailInput" class="sr-only">Secure Email Address</label>
+                        <input type="email" id="subscriberEmailInput" placeholder="Enter secure email address" required>
+                    </div>
+                    <button type="submit" class="btn-subscribe">Activate Real-Time Tracking</button>
+                </form>
+
+                <div class="security-badge-row">
+                    <span><i class="fa-solid fa-lock text-brand-primary"></i> 256-Bit SSL</span>
+                    <span><i class="fa-solid fa-user-shield text-brand-primary"></i> No Spam Policy</span>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer style="text-align: center; padding: 40px 20px; border-top: 1px solid #222f47; background: #0d1322; margin-top: 50px;">
+        <p style="font-size: 14px; color: #f8fafc; font-weight: 500; letter-spacing: 0.5px;">
+            Designed and developed by a genius called
+            <span style="background: linear-gradient(120deg, #10b981, #38bdf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">
+                Mike Bahati
+            </span>
+        </p>
+    </footer>
+
+    <div class="modal-overlay" id="globalModalSystem" onclick="closeModalWindow(event)">
+        <div class="modal-body" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="triggerModalDismissal()"><i class="fa-solid fa-xmark"></i></button>
+            <div id="modalDynamicPayload">
+                </div>
+        </div>
+    </div>
+
+    <div class="toast-notification" id="toastNotificationSystem">
+        <i class="fa-solid fa-circle-check text-brand-primary" style="font-size: 20px;"></i>
+        <div>
+            <strong style="display:block; font-size:14px;" id="toastTitle">Success</strong>
+            <span style="font-size:12px; color: var(--text-secondary);" id="toastMessage">Action captured successfully.</span>
+        </div>
+    </div>
+
+    <script>
+        // High fidelity database containing tracking arrays and official outgoing destination endpoints
+        const lenderDatabase = [
+            { id: 1, name: "LightStream", icon: "fa-rocket", categories: ["all", "high-cap"], rating: "4.9", speed: "Same-Day Funding", apr: "6.99% - 24.49%", limit: "$100,000", score: "660+", directUrl: "https://www.lightstream.com", perks: ["Zero origination or late fees", "Rate-beat guarantee programs", "Flexible multi-year structures"], fee: "0%", timeToCheck: "2 minutes" },
+            { id: 2, name: "SoFi", icon: "fa-building-columns", categories: ["all", "high-cap"], rating: "4.8", speed: "Instant Digital Payout", apr: "8.99% - 25.80%", limit: "$100,000", score: "650+", directUrl: "https://www.sofi.com", perks: ["Unsecured unemployment safety guard", "No fee architectural execution", "Complementary financial planning"], fee: "0%", timeToCheck: "3 minutes" },
+            { id: 3, name: "Upstart", icon: "fa-brain", categories: ["all", "lightning", "fair-credit"], rating: "4.7", speed: "Instant Automated Decision", apr: "7.80% - 35.99%", limit: "$50,000", score: "300+", directUrl: "https://www.upstart.com", perks: ["AI metrics evaluate beyond scores", "Ideal for thin credit profiles", "Next-day funding deployment"], fee: "0% - 12%", timeToCheck: "5 minutes" },
+            { id: 4, name: "Avant", icon: "fa-bolt", categories: ["all", "fair-credit"], rating: "4.5", speed: "Next Business Day", apr: "9.95% - 35.99%", limit: "$35,000", score: "580+", directUrl: "https://www.avant.com", perks: ["Highly tailored for fair credit", "Clean mobile dashboard layout", "Transparent payment calendars"], fee: "4.75%", timeToCheck: "90 seconds" },
+            { id: 5, name: "Upgrade", icon: "fa-arrow-trend-up", categories: ["all", "fair-credit"], rating: "4.6", speed: "24-Hour Disbursal", apr: "8.49% - 35.99%", limit: "$50,000", score: "580+", directUrl: "https://www.upgrade.com", perks: ["Builds baseline structural credit", "Free credit scoring diagnostic dashboards", "No prepayment asset penalties"], fee: "1.85% - 9.99%", timeToCheck: "3 minutes" },
+            { id: 6, name: "Best Egg", icon: "fa-egg", categories: ["all", "lightning"], rating: "4.6", speed: "Under 24 Hours", apr: "8.99% - 35.99%", limit: "$50,000", score: "600+", directUrl: "https://www.bestegg.com", perks: ["Direct card consolidation payouts", "Extremely stable operations index", "Verifiable online credit verification"], fee: "0.99% - 8.99%", timeToCheck: "3 minutes" },
+            { id: 7, name: "OneMain Financial", icon: "fa-hand-holding-dollar", categories: ["all", "fair-credit"], rating: "4.4", speed: "1-Hour Branch Pickup", apr: "18.00% - 35.99%", limit: "$20,000", score: "None", directUrl: "https://www.onemainfinancial.com", perks: ["Personal interactive physical verification", "Excellent personal rebuilding channel", "Fixed budgeting structures available"], fee: "Varies by state", timeToCheck: "5 minutes" },
+            { id: 8, name: "LendingPoint", icon: "fa-circle-nodes", categories: ["all", "fair-credit"], rating: "4.5", speed: "Same-Day Approval", apr: "7.99% - 35.99%", limit: "$36,500", score: "600+", directUrl: "https://www.lendingpoint.com", perks: ["Evaluates broader historical earning vectors", "Custom multi-option offer menus", "Direct relationship management standard"], fee: "0% - 8%", timeToCheck: "2 minutes" },
+            { id: 9, name: "Earnest", icon: "fa-graduation-cap", categories: ["all", "high-cap"], rating: "4.7", speed: "1 - 2 Business Days", apr: "6.99% - 22.10%", limit: "$75,000", score: "650+", directUrl: "https://www.earnest.com", perks: ["Calibrate custom structural timing windows", "Skip one payment window per year", "No processing platform friction fees"], fee: "0%", timeToCheck: "4 minutes" },
+            { id: 10, name: "Prosper", icon: "fa-users", categories: ["all", "lightning"], rating: "4.4", speed: "1-Hour Approval Pipeline", apr: "8.99% - 35.99%", limit: "$50,000", score: "640+", directUrl: "https://www.prosper.com", perks: ["Peer-to-peer crowd capital systems", "Three-step verification architecture", "Standard linear fixed timelines"], fee: "1% - 5%", timeToCheck: "3 minutes" }
+        ];
+
+        // Centralized Layout Generation Loop
+        function constructDisplayStream(activeCategory = 'all') {
+            const layoutTarget = document.getElementById('lenderOutputTarget');
+            layoutTarget.innerHTML = '';
+
+            const processingStream = lenderDatabase.filter(lender => lender.categories.includes(activeCategory));
+
+            processingStream.forEach((lender) => {
+                const cardDomElement = document.createElement('div');
+                cardDomElement.className = 'loan-card';
+
+                // Destructure variables locally to optimize IDE symbolic tracking checks
+                const { id, name, icon, speed, apr, limit, score, directUrl, perks } = lender;
+                const startingApr = apr.split(' ')[0];
+
+                cardDomElement.innerHTML = `
+                    <div class="top-banner">Verified Ranking #${id}</div>
+                    <div class="speed-badge"><i class="fa-solid fa-bolt-lightning"></i> ${speed}</div>
+
+                    <div class="card-meta">
+                        <div class="meta-icon"><i class="fa-solid ${icon}"></i></div>
+                        <div class="meta-title">
+                            <h3>${name}</h3>
+                            <div class="trust-row">
+                                <i class="fa-solid fa-star text-star"></i>
+                                <strong>${lender.rating}/5</strong> Verified Trust Index
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metrics-grid">
+                        <div class="metric-cell">
+                            <span>Starting APR</span>
+                            <strong class="text-brand-primary">${startingApr}</strong>
+                        </div>
+                        <div class="metric-cell">
+                            <span>Max Capital</span>
+                            <strong>${limit}</strong>
+                        </div>
+                        <div class="metric-cell">
+                            <span>Min Credit</span>
+                            <strong class="text-accent-blue">${score}</strong>
+                        </div>
+                    </div>
+
+                    <ul class="bullet-perks">
+                        ${perks.map(perk => `<li><i class="fa-solid fa-shield-check text-brand-primary"></i> ${perk}</li>`).join('')}
+                    </ul>
+
+                    <div class="action-block">
+                        <button class="btn-cta btn-go" onclick="routeToExternalLender('${directUrl}', '${name}')">
+                            Check Your Rate Fast <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </button>
+                        <button class="btn-cta btn-info" onclick="displayLenderDeepDive(${id})">
+                            Full Breakdown
+                        </button>
+                    </div>
+                `;
+                layoutTarget.appendChild(cardDomElement);
+            });
+        }
+
+        // Action 1: Interactive Category Tab Shifting Engine
+        function toggleCategory(targetTag, referenceButton) {
+            document.querySelectorAll('.filter-chip').forEach(chip => chip.classList.remove('active'));
+            referenceButton.classList.add('active');
+            constructDisplayStream(targetTag);
+            triggerToastSystem("Filter Applied", `Now displaying lenders matching the selected criteria.`);
+        }
+
+        // Action 2: True Dynamic Redirection Engine
+        function routeToExternalLender(destinationUrl, providerName) {
+            triggerToastSystem("Redirecting Securely", `Connecting directly to official ${providerName} underwriting servers...`);
+            setTimeout(() => {
+                window.open(destinationUrl, '_blank');
+            }, 800);
+        }
+
+        // Action 3: In-Depth Breakdowns via Dynamic Injecting Modal Window
+        function displayLenderDeepDive(lenderId) {
+            const lenderDataInstance = lenderDatabase.find(l => l.id === lenderId);
+            if (!lenderDataInstance) return;
+
+            const contentContainer = document.getElementById('modalDynamicPayload');
+
+            // Unpack variables locally to satisfy internal string literal parsing tools
+            const { name, icon, speed, apr, limit, timeToCheck, fee, score, directUrl } = lenderDataInstance;
+
+            contentContainer.innerHTML = `
+                <div class="modal-header-block">
+                    <div class="meta-icon" style="background: rgba(99,102,241,0.1);"><i class="fa-solid ${icon}"></i></div>
+                    <div>
+                        <h2>${name} Comprehensive Audit</h2>
+                        <p style="color: var(--text-secondary); font-size:13px;">Regulatory ID &amp; Platform Transparency Matrix</p>
+                    </div>
+                </div>
+                <table class="modal-data-table">
+                    <tbody>
+                        <tr><td>Underwriting Timeline</td><td>${speed}</td></tr>
+                        <tr><td>Advertised APR Spectrum</td><td>${apr}</td></tr>
+                        <tr><td>Maximum Unsecured Limit</td><td>${limit}</td></tr>
+                        <tr><td>Estimated Soft Inquiry Pre-check</td><td>${timeToCheck}</td></tr>
+                        <tr><td>Standard Platform Origination Fee</td><td>${fee}</td></tr>
+                        <tr><td>Baseline Credit Bureau Threshold</td><td>${score} Credit Model</td></tr>
+                        <tr><td>Collateral Dependency Matrix</td><td>0% (Strictly Unsecured Asset Pool)</td></tr>
+                    </tbody>
+                </table>
+                <button class="btn-match" style="background: var(--brand-primary); color: #042f1a;" onclick="routeToExternalLender('${directUrl}', '${name}')">
+                    Proceed to Official Secure Application Form <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+            `;
+
+            document.getElementById('globalModalSystem').classList.add('active');
+        }
+
+        // Action 4: Calculator Dynamic Calibration Amortization Algorithm
+        function runEngineMetrics() {
+            const userCapitalInput = parseInt(document.getElementById('rangeCapital').value);
+            const userMonthsInput = parseInt(document.getElementById('rangeMonths').value);
+
+            document.getElementById('sliderAmtValue').innerText = `$${userCapitalInput.toLocaleString()}`;
+            document.getElementById('sliderTimeValue').innerText = `${userMonthsInput} Months`;
+
+            // Standard algorithmic estimation calculation index fixed at a 11.5% model index
+            const uniformRate = 0.115 / 12;
+            const compoundFactor = Math.pow(1 + uniformRate, userMonthsInput);
+            const paymentOutputResult = (userCapitalInput * uniformRate * compoundFactor) / (compoundFactor - 1);
+
+            document.getElementById('monthlyPaymentDisplay').innerText = `$${Math.round(paymentOutputResult).toLocaleString()}`;
+        }
+
+        // Action 5: Smart Filtration Cross-Match Mechanism
+        function executeSmartFilterMatch() {
+            const activeCapitalTarget = parseInt(document.getElementById('rangeCapital').value);
+            const targetChips = document.querySelectorAll('.filter-chip');
+
+            // Re-order sorting matrices according to upper funding limits to match choice parameters
+            if (activeCapitalTarget > 75000) {
+                toggleCategory('high-cap', targetChips[3]);
+            } else if (activeCapitalTarget < 25000) {
+                toggleCategory('fair-credit', targetChips[2]);
+            } else {
+                toggleCategory('all', targetChips[0]);
+            }
+
+            document.getElementById('lenderOutputTarget').scrollIntoView({ behavior: "smooth" });
+            triggerToastSystem("Smart Match Completed", `Prioritizing optimal platforms for an amount of $${activeCapitalTarget.toLocaleString()}.`);
+        }
+
+        // Action 6: Secure Subscriber Intake Operations Pipeline
+        function captureSubscriberData(e) {
+            e.preventDefault();
+            const secureInputTarget = document.getElementById('subscriberEmailInput');
+            const targetedAddressVal = secureInputTarget.value;
+
+            if (targetedAddressVal) {
+                triggerToastSystem("Encrypted Alert Active", `Subscribed! Alerts active for: ${targetedAddressVal}`);
+                secureInputTarget.value = '';
+            }
+        }
+
+        // Action 7: General Advertiser Disclosure Informational Modal Dynamic Construction
+        function openDisclosureModal() {
+            const payloadTarget = document.getElementById('modalDynamicPayload');
+            payloadTarget.innerHTML = `
+                <div class="modal-header-block">
+                    <div class="meta-icon" style="color: #eab308;"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div>
+                        <h2>Editorial Transparency &amp; Partner Disclosure</h2>
+                        <p style="color: var(--text-secondary); font-size:12px;">Data Object Integrity Index</p>
+                    </div>
+                </div>
+                <p style="color: var(--text-secondary); font-size: 14px; line-height: 160%; margin-bottom: 20px;">
+                    This website functions strictly as an independent, data-driven aggregate evaluation engine. We do not issue loans directly, collect applications, or charge consumer fees.
+                </p>
+                <p style="color: var(--text-secondary); font-size: 14px; line-height: 160%; margin-bottom: 20px;">
+                    To keep this tool free, we may receive compensation from certain loan providers when users click out to perform eligibility pre-checks. This compensation structure does not affect starting APR points or execution parameters for the applicant. All metrics are updated dynamically via platform auditing protocols.
+                </p>
+                <button class="btn-match" onclick="triggerModalDismissal()">Acknowledge &amp; Dismiss</button>
+            `;
+            document.getElementById('globalModalSystem').classList.add('active');
+        }
+
+        // Action 8 & 9: Global Interface Modal Utility Controllers
+        function triggerModalDismissal() {
+            document.getElementById('globalModalSystem').classList.remove('active');
+        }
+
+        function closeModalWindow(e) {
+            if (e.target === document.getElementById('globalModalSystem')) {
+                triggerModalDismissal();
+            }
+        }
+
+        // Action 10: Dynamic Hardware Notification Toast Control Engine
+        function triggerToastSystem(headline, operationalMessage) {
+            const toastFrame = document.getElementById('toastNotificationSystem');
+            document.getElementById('toastTitle').innerText = headline;
+            document.getElementById('toastMessage').innerText = operationalMessage;
+
+            toastFrame.classList.add('show');
+            setTimeout(() => {
+                toastFrame.classList.remove('show');
+            }, 4500);
+        }
+
+        // Action 11: Dynamic Sidebar Odds Metrics Logic Engine
+        function calculateOddsEngine() {
+            const totalChecks = document.querySelectorAll('.odds-check');
+            let markedCount = 0;
+
+            totalChecks.forEach(checkbox => {
+                if (checkbox.checked) markedCount++;
+            });
+
+            const outputSelector = document.getElementById('oddsPercentDisplay');
+
+            switch (markedCount) {
+                case 0:
+                    outputSelector.innerText = "Poor (30%)";
+                    outputSelector.style.color = "#ef4444";
+                    break;
+                case 1:
+                    outputSelector.innerText = "Fair (50%)";
+                    outputSelector.style.color = "#f59e0b";
+                    break;
+                case 2:
+                    outputSelector.innerText = "Good (70%)";
+                    outputSelector.style.color = "#38bdf8";
+                    break;
+                case 3:
+                    outputSelector.innerText = "Strong (85%)";
+                    outputSelector.style.color = "#6366f1";
+                    break;
+                case 4:
+                    outputSelector.innerText = "Excellent (98%)";
+                    outputSelector.style.color = "#10b981";
+                    triggerToastSystem("Odds Optimized", "Your criteria configuration meets optimal metrics for prime unsecured tiers!");
+                    break;
+            }
+        }
+
+        // Automatic Application Context Initialization
+        window.onload = function() {
+            constructDisplayStream('all');
+            runEngineMetrics();
+        };
+    </script>
+</body>
+</html>
