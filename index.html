@@ -1,4 +1,53 @@
 <!DOCTYPE html>
+<html>
+<head>
+<title>EasyLoans</title>
+
+<style>
+  body{
+    font-family: Arial;
+    margin:0;
+}
+
+.hidden {
+  display: none;
+}
+
+.container{
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+}
+
+input, button{
+   width: 100%;
+   padding:10px;
+   margin: 5px 0;
+}
+</style>
+</head>
+
+<body>
+
+<div id="authPage" class="container">
+<h2> Login/ Register </h2>
+
+<input type="text" id="Username">
+<input type="password" id="Password">
+
+<button onclick="register()"> Register </button>
+<button onclick="login()"> Login </button>
+</div>
+
+<div id="mainContent" class="hidden">
+  <h1>Welcome to EasyLoans 🤑🤑</h1>
+
+  <p>This is where dreams become real</p>
+  <button onclick="logout()"> Logout </button>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <
