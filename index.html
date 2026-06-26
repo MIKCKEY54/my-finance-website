@@ -1332,3 +1332,60 @@ input, button{
     </script>
 </body>
 </html>
+
+</div>
+<script>
+
+window.onload = function() {
+    const loggedIn=localStorage.getItem("loggedIn");
+
+if(loggedIn==="true") {
+  showMain();
+   }
+}
+
+function register() { 
+const   user=document.getElementById("username").value; 
+const pass document.getElementById("password").value;
+
+if (user === ""||pass === "") {
+   alert("Fill all fields!!!");
+   return;
+}
+
+localStorage.setItem("username",  user);
+localStorage.setItem("password",  pass);
+
+alert("Registered Successfully!!🤩🤩🤑")
+
+}
+
+function login() {
+const user=document.getElementById("username"). value;
+const pass=document.getElementById("password").value;
+
+const storedUser = localStorage.getItem("username");
+const storedPass = localStorage.getItem("password");
+
+if (user === storedUser&& pass === storedPass) {
+localStorage.setItem("loggedIn, "true");
+showMain();
+} else {
+  alert("Invalid Credentials!!!🥶🥶");
+ }
+}
+
+function logout() {
+   localStorage.removeItem("loggedIn");
+   location.reload();
+}
+
+function showMain() {
+document.getElementById("mainContent"). classList.add("hidden");
+document.getElementById("authPage"). classList.remove("hidden");
+}
+
+</script>
+</body>
+</html>
+
